@@ -1,0 +1,86 @@
+@font-face
+{ font-family: "helvetica" ;
+  src: url(helvetica.ttc) ;
+
+  font-family: "nueue" ;
+  src: url(HelveticaNeue.ttc) ;
+}
+
+* {
+    cursor: none;
+}
+
+body {
+	font-family: helvetica;
+	font-size: 48px;
+	line-height: 1.5;
+	background-color: #f7f3eb;
+	color: #323233;
+}
+
+#header {
+  font-weight: 200;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: #f7f3eb;
+  width: 100%;
+  border-bottom-color: #323233;
+  border-bottom-style: solid ;
+  border-bottom-width: 2pt ;
+  padding: 30px;
+  color: #323233;
+  user-select: none;
+}
+
+@keyframes fadein {
+  0% { opacity: 0; }
+  100% { opacity: 1;}
+}
+
+img {
+  position: absolute;
+  top: 200px;
+  left: 200px;
+	width: 500px;
+  transform: translate(-50%, -50%) scale(0.5);
+  animation: fadein 0.5s;
+}
+
+
+#header img
+{
+  width: 60px;
+  position: relative;
+  top: 42px;
+  left: 20px;
+  margin-right: -10px;
+}
+
+#ball {
+    z-index: 2000;
+     width: 130px;
+     height: 200px;
+     background: none;
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     margin: -10px 0 0 -10px;
+     pointer-events: none;
+     /* border: solid 4px;
+     border-radius: 10px; */
+     text-align: center;
+}
+
+#ball img
+{ width: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+}

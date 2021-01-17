@@ -1,0 +1,97 @@
+body
+{
+  background-color: #f7f3eb ;
+  color: #323233;
+}
+
+* {
+    cursor: none;
+}
+
+@font-face
+{ font-family: "helvetica" ;
+  src: url(helvetica.ttc) ;
+
+  font-family: "nueue" ;
+  src: url(HelveticaNeue.ttc) ;
+}
+
+#container
+{
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  margin: 70px;
+  padding: 70px;
+  animation: fade 2s 0s forwards;
+}
+
+
+
+.link a
+{ font-family: helvetica;
+  font-size: 55pt;
+  font-weight: 300;
+  color: #323233;
+  text-decoration: none;
+  user-select: none;
+}
+
+.link
+{
+  border-bottom-color: #323233;
+  border-bottom-style: solid ;
+  border-bottom-width: 4pt ;
+  padding: 6px;
+  color: #323233;
+  user-select: none;
+}
+
+.link
+{ filter: blur(3.5px);}
+
+.link:hover
+{ filter: blur(0px);
+  transition: 0.5s;
+}
+
+#ball {
+     /* width: 60px;
+     height: 60px;
+     background: none;
+     border: 1px solid grey;
+     border-radius: 50%;
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     margin: -10px 0 0 -10px;
+     pointer-events: none; */
+  width: 110px;
+	height: 180px;
+	/* border: 6px solid #323233;
+	border-radius: 15px; */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+  margin: -10px 0 0 -10px;
+  pointer-events: none;
+  text-align: center;
+}
+
+#ball img
+{ display: inline-block;
+  opacity: 0;
+  width: 100px;
+  position: absolute;
+  top: 7px;
+  left: 5px;
+  animation: fade 2s 0s forwards;
+}
+
+@keyframes fade
+{
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
