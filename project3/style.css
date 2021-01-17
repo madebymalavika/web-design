@@ -1,0 +1,690 @@
+body {
+  background-color: white;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  scroll-behavior: none;
+  padding: 0;
+  margin: 0 ;
+  /* cursor: url(../inventory/try.gif), auto; */
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "circular";
+  src: url("Circular-Book.ttf");
+}
+
+#onboarding {
+  text-align: center;
+  position: absolute;
+  font-family: "circular";
+  font-weight: 100;
+  font-size: 12pt;
+  opacity: 0;
+  top: 40%;
+  left: 46%;
+  z-index: 1000;
+  transition: opacity 2s ease-in-out, top 0.1s ease, left 0.1s ease;
+}
+
+#cursor
+{
+  position: absolute;
+  width: 80px;
+  height: auto;
+  top: 0%;
+  left: 30%;
+  mix-blend-mode: multiply;
+    opacity: 30%;
+  cursor: none;
+}
+
+.btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 40px;
+  left: 40px;
+  z-index: 100;
+  border: rgb(210, 210, 210) 3px solid;
+  /* background-color: white; */
+  border-radius: 3px;
+  cursor: pointer;
+    opacity: 0;
+  transition: border 0.1s ease-in-out, opacity 2s ease-in-out;
+}
+
+.btn:hover {
+  border: rgb(100,100,100) 3px solid;
+}
+
+.btn:hover .bar {
+  background-color: rgb(100,100,100);
+}
+
+.btn .bar {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 3px;
+  height: 20px;
+  border-radius: 3px;
+  background-color: rgb(210, 210, 210);
+  transform-origin: center;
+  transition: background 0.1s ease-in-out;
+  transition: transform 0.4s ease-in-out, background 0.1s ease-in-out;
+  transition: transform 0.4s ease-in-out, background 0.1s ease-in-out;
+}
+
+.btn.pause .bar-1 {
+  transform: translateX(13.5px) translateY(0px) rotate(0deg);
+}
+
+.btn.pause .bar-2 {
+  transform: translateX(24px) translateY(0px) rotate(0deg);
+}
+
+.btn.play .bar-1 {
+  transform: translateX(20px) translateY(-5px) rotate(-55deg);
+}
+
+.btn.play .bar-2 {
+  transform: translateX(20px) translateY(5px) rotate(-125deg);
+}
+
+/* main shape properties */
+.shape {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  /* margin: 10px; */
+  mix-blend-mode: difference;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 50px 100px 50px;
+  border-color: transparent transparent #D8447D transparent;
+}
+
+/* colours */
+
+.red {
+  background-color: #FF121B;
+}
+
+.purple {
+  background-color: #342C99;
+}
+
+.neonblue {
+  background-color: #00DAFF;
+}
+
+.green
+{
+
+  background-color: #73E600;
+}
+
+.pink {
+  background-color: #FF0094;
+}
+
+.yellow {
+  background-color: #FFD100;
+}
+
+.orange {
+  background-color: #FF7203;
+}
+
+.navy {
+  background-color: #1a237e;
+}
+
+.liquidgreen {
+  background-color: #00FDB3;
+}
+
+.neonpurple
+{
+  background-color: #4700C4;
+
+}
+
+/*triangle properties*/
+.triangle.red {
+  background-color: transparent;
+  border-color: transparent transparent #FF121B transparent;
+}
+
+.triangle.purple {
+  background-color: transparent;
+  border-color: transparent transparent #342C99 transparent;
+}
+
+.triangle.neonblue {
+  background-color: transparent;
+  border-color: transparent transparent #00DAFF transparent;
+}
+
+.triangle.green
+{
+  background-color: transparent;
+
+  border-color: transparent transparent #73E600 transparent;
+}
+
+.triangle.pink {
+  background-color: transparent;
+  border-color: transparent transparent #FF0094 transparent;
+}
+
+.triangle.yellow {
+  background-color: transparent;
+  border-color: transparent transparent #FFD100 transparent;
+}
+
+.triangle.orange {
+  background-color: transparent;
+  border-color: transparent transparent #FF7203 transparent;
+}
+
+.triangle.navy {
+  background-color: transparent;
+  border-color: transparent transparent #1a237e transparent;
+}
+
+.triangle.liquidgreen {
+  background-color: transparent;
+  border-color: transparent transparent #00FDB3 transparent;
+}
+
+.triangle.neonpurple
+{
+  background-color: transparent;
+  border-color: transparent transparent #4700C4 transparent;
+
+}
+
+
+/* animation library */
+@keyframes crazy-bounce {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  20% {
+    transform: translate(0, -32px) scale(1, 2);
+  }
+
+  45% {
+    transform: translate(0, 35px) scale(1, 0.1);
+  }
+
+  70% {
+    transform: translate(0, -32px) scale(1, 2);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes crazy-bounce-left {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  20% {
+    transform: translate(32px, 0px) scale(2, 1);
+  }
+
+  45% {
+    transform: translate(-35px, 0) scale(.1, 1);
+  }
+
+  70% {
+    transform: translate(32px, 0) scale(2, 1);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes roll {
+  17% {
+    border-bottom-right-radius: 25%;
+  }
+
+  25% {
+    transform: translateY(9px) rotate(22.5deg);
+  }
+
+  50% {
+    transform: translateY(18px) scale(1, .9) rotate(45deg);
+    border-bottom-right-radius: 50%;
+  }
+
+  75% {
+    transform: translateY(9px) rotate(67.5deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(90deg);
+  }
+}
+
+@keyframes circlebounce {
+  40% {
+    height: 100px;
+  }
+
+  50% {
+    transform: translate(0, 65px);
+    height: 90px;
+    /* border-radius: 50%; */
+  }
+
+  65% {
+    height: 100px;
+  }
+}
+
+@keyframes squarebounce {
+  40% {
+    height: 100px;
+  }
+
+  50% {
+    transform: translate(0, 65px);
+    height: 90px;
+    /* border-radius: 50%; */
+  }
+
+  65% {
+    height: 100px;
+  }
+}
+
+@keyframes wandering {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: translateX(4em) rotate(-90deg) scale(0.5);
+  }
+
+  50% {
+    /* Hack to make FF rotate in the right direction */
+    transform: translateX(4em) translateY(4em) rotate(-179deg);
+  }
+
+  50.1% {
+    transform: translateX(4em) translateY(4em) rotate(-180deg);
+  }
+
+  75% {
+    transform: translateX(0) translateY(4em) rotate(-270deg) scale(0.5);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes chasing-dots-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes chasing-dots-bounce {
+  0%, 100% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+
+@keyframes double-bounce {
+  0%, 100% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: scale(0.5) translateX(0px);
+  }
+
+  100% {
+    transform: scale(1) translateX(45px);
+  }
+}
+
+@keyframes roll-new {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate(100px, 0) rotate(360deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes morph {
+  0% {
+    transform: rotate(0deg);
+    border-radius: 50%;
+  }
+
+  50% {
+    transform: rotate(90deg);
+    border-radius: 0%;
+  }
+
+  100% {
+    transform: rotate(180deg);
+    border-radius: 50%;
+  }
+}
+
+@keyframes extend {
+  0% {
+    width: 0.5em;
+    box-shadow: 1em -0.5em #FF0094, -1em 0.5em #FF0094;
+  }
+
+  35% {
+    width: 2.5em;
+    box-shadow: 0 -0.5em #FF0094, 0 0.5em #FF0094;
+  }
+
+  70% {
+    width: 0.5em;
+    box-shadow: -1em -0.5em #FF0094, 1em 0.5em #FF0094;
+  }
+
+  100% {
+    box-shadow: 1em -0.5em #FF0094, -1em 0.5em #FF0094;
+  }
+}
+
+@keyframes rotate-square {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(0px, 100px) rotate(-90deg);
+  }
+
+  50% {
+    transform: translate(-100px, 100px) rotate(-180deg);
+  }
+
+  75% {
+    transform: translate(-100px, 0px) rotate(-270deg);
+  }
+
+  100% {
+    transform: translate(0px, 0px) rotate(-360deg);
+  }
+}
+
+/* animation classes */
+.roll {
+  animation: roll .5s linear infinite;
+}
+
+.circlebounce {
+  transform-origin: bottom;
+  animation: circlebounce 1.5s infinite ease-in-out;
+  /* animation-fill-mode: both;
+  animation-direction: alternate-reverse; */
+}
+
+.squarebounce {
+  transform-origin: bottom;
+  animation: squarebounce 1.5s infinite;
+  animation-delay: 0.2s;
+}
+
+.chasing {
+  background-color: transparent;
+}
+
+.chasing .dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  animation: wandering 1.8s ease-in-out -1.8s infinite both;
+}
+
+.chasing .dot:nth-child(odd) {
+  animation-delay: -0.9s;
+}
+
+.circle.chasing.dot {
+  border-radius: 50%;
+}
+
+.triangle.chasing
+{
+  width: 100px;
+  height: 100px;
+  border-style:none;
+  border-width: 0px;
+  border-color: transparent;
+}
+
+.triangle .dot
+{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 20px 40px 20px;
+  background-color: transparent;
+}
+
+.pulse {
+  animation: pulse 1.0s infinite ease-in-out;
+}
+
+.pulse-inside::before, .pulse-inside::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  /* top: -20%;
+  left: -20%; */
+  animation: double-bounce 2.0s infinite ease-in-out;
+}
+
+.pulse-inside::after {
+  background-color: white;
+  animation: double-bounce 2s infinite ease-in-out;
+  animation-delay: .5s;
+}
+
+.circle.pulse-inside::before, .circle.pulse-inside::after {
+  border-radius: 50%;
+}
+
+.move {
+  animation: move 1s infinite;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+}
+
+.triangle.roll2 {
+  border-width: 0 25px 50px 25px;
+  animation: roll-new 2s cubic-bezier(.17, .37, .43, .67) infinite;
+}
+
+.square.roll2 {
+  width: 50px;
+  height: 50px;
+  animation: roll-new 2s cubic-bezier(.17, .37, .43, .67) infinite;
+}
+
+.morph {
+  animation: morph 1s infinite linear;
+  margin-left: 100px;
+}
+
+.pulse,
+.pulse:before,
+.pulse:after {
+  animation: 1s infinite ease-in-out;
+}
+
+.pulse:before,
+.pulse:after {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+}
+
+.pulse:before {
+  content: '';
+  border: 20px solid white;
+  animation-name: pulse;
+}
+
+.square.pulse:before,
+.square.pulse:after {
+  border-radius: 0%;
+}
+
+.rope {
+  background-color: transparent;
+}
+
+.rope:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0.5em;
+  height: 0.5em;
+  transform: translate(-50%, -50%) scale(2.5);
+}
+
+.rope:before {
+  animation: extend 2s infinite;
+}
+
+.circle.rope:before {
+  border-radius: 0.25em;
+}
+
+.crazybounce {
+  width: 60px;
+  height: 60px;
+  transform-origin: 100% 50%;
+  animation: crazy-bounce 2s ease-in-out alternate infinite;
+}
+
+.crazybounce-left {
+  width: 60px;
+  height: 60px;
+  transform-origin: 100% 50%;
+  animation: crazy-bounce-left 2s ease-in-out alternate infinite;
+}
+
+.rotate-square {
+  width: 50px;
+  height: 50px;
+  margin-left: 150px;
+  margin-top: 0px;
+  transform-origin: center center;
+  animation: rotate-square 2s ease infinite;
+}
+
+.triangle.rotate-square {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 25px 50px 25px;
+  /* border-color: transparent transparent #00DAFF transparent; */
+}
+
+.chase {
+  text-align: center;
+  animation: chasing-dots-rotate 2s infinite linear;
+  background-color: transparent;
+}
+
+.chase::before, .chase::after {
+  content: '';
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  position: absolute;
+  animation: chasing-dots-bounce 2s infinite ease-in-out;
+  background-color: #FFD100;
+}
+
+.chase::after {
+  top: auto;
+  bottom: 0;
+  animation-delay: -1s;
+}
+
+.circle.chase::after, .circle.chase::before {
+  border-radius: 100%;
+  background-color: #00DAFF;
+}
+
+/*
+animation play state */
+.paused {
+  animation-play-state: paused !important;
+}
+
+.paused::before {
+  animation-play-state: paused !important;
+}
+
+.paused::after {
+  animation-play-state: paused !important;
+}
