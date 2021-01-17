@@ -1,0 +1,163 @@
+body
+{
+  /* grey background color */
+  background-color: #ffffff ;
+  height: 100% ;
+
+}
+
+#logo
+{
+  z-index: 15;
+  position: fixed;
+  left: 90px;
+  height: 33px;
+  width: 33px;
+  top: 10px;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+
+#searchbar
+{
+  position: fixed ;
+  float: right ;
+  right: 70px ;
+  height: 40px ;
+  width: 350px ;
+  border-radius: 20px ;
+  background-color: #e7ecf0 ;
+  top: 7px ;
+}
+
+#maincolumn
+{
+ width: 600px ;
+ text-align: center ;
+ align-content: center ;
+}
+
+
+#header
+{
+  background-color: #ffffff ;
+  z-index: 20 ;
+  top: 0 ;
+  position: fixed ;
+  width: 600px ;
+  height: 53px ;
+  margin-left: 325px ;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(0, 0, 0, 0.098);
+
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: rgba(0, 0, 0, 0.098);
+
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: rgba(0, 0, 0, 0.098);
+}
+
+#create
+{
+  cursor: pointer;
+  margin-left: 325px ;
+  transition: background-color .2s;
+  position: relative ;
+  /* align-self: center ;
+  align: center; */
+  margin-top: 50px ;
+  margin-bottom: 0px ;
+  padding-top: 10px;
+  padding-right: 15px ;
+  padding-left: 15px ;
+  text-align: center ;
+
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(0, 0, 0, 0.098);
+
+  width: 570px ;
+  height: 120px ;
+
+  background-color: #FFFFFF ;
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: rgba(0, 0, 0, 0.098);
+
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: rgba(0, 0, 0, 0.098);
+
+}
+
+#footer
+{
+  height: 9px ;
+  width: 600px ;
+  position: absolute;
+  bottom: 0 ;
+  right: 0;
+  background-color: #e7ecf0 ;
+}
+
+img
+{
+  height: 49px;
+  width: 49px ;
+  border-radius: 100px ;
+  position: absolute ;
+  left: 15px ;
+  top: 15px;
+}
+
+.post
+{
+  margin-left: 325px ;
+  cursor: pointer;
+  transition: background-color .2s;
+  position: relative ;
+  /* align-self: center ;
+  align: center; */
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  padding-top: 10px;
+  padding-right: 15px ;
+  padding-left: 15px ;
+  text-align: center ;
+
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(0, 0, 0, 0.098);
+
+  width: 570px ;
+  height: 523px ;
+
+  background-color: #FFFFFF ;
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: rgba(0, 0, 0, 0.098);
+
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: rgba(0, 0, 0, 0.098);
+
+}
+
+.post:hover{
+   background-color: #f4f8fa ;
+}
+
+.userimage
+{
+  position: absolute ;
+  /* background-color: #00aced ; */
+  background-color: #ececec ;
+  width: 49px ;
+  height: 49px ;
+  border-radius: 100px ;
+  opacity: 1 ;
+}

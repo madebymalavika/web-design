@@ -1,0 +1,132 @@
+/* css for home page */
+@font-face
+{ font-family: "montserrat" ;
+  src: url(montserrat.otf) ;
+
+  font-family: "lato" ;
+  src: url(lato/lato-light.ttf) ;
+}
+
+body
+{
+  /* grey background color */
+  animation: fadein ease forwards ;
+  background-color: #ececec ;
+  height: 100% ;
+
+}
+
+
+#maintop
+{
+  text-align: center ;
+  margin-top: 15% ;
+}
+
+#titleblock
+{
+ align: center ;
+ text-align: center ;
+ margin-left: auto ;
+
+}
+
+#iconlinks
+{
+  animation: fadein 1s ease-in-out forwards;
+  opacity: 0 ;
+  background-color: #FFFFFF ;
+  align: center ;
+  margin-right: auto;
+  margin-left: auto;
+  width: 50%;
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 15px ;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.iconscroll
+{
+  margin-top: 120px ;
+  text-align: center ;
+  margin-left: auto ;
+}
+.iconscroll img {
+  animation: fade-slide-up 1s 1s ease-out forwards ;
+  opacity: 0 ; }
+
+
+@keyframes fade-slide-up
+{
+  0% { opacity: 0 ;
+       transform: translateY(4rem);
+  }
+
+  100% { opacity: 1 ;
+         transform: none ;
+  }
+}
+
+
+#aboutsection
+{
+  margin-top: 50px
+
+}
+.textcontent
+{
+  position: relative;
+  align: center ;
+  margin-right: auto;
+  margin-left: auto;
+  width: 50%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px ;
+  background-color: #FFFFFF ;
+  border-radius: 10px;
+}
+
+p.titlecase
+{
+  padding: 50px 50px 0px ;
+  color: #c1c1c1 ;
+  text-align: left ;
+  font-family: "montserrat" ;
+  font-weight: lighter ;
+  font-size: 30pt ;
+}
+
+p.textcase
+{
+  padding: 0px 50px 50px ;
+  color: #c1c1c1 ;
+  text-align: left ;
+  font-family: "lato" ;
+  font-weight: lighter ;
+  font-size: 12pt ;
+  background-color: #ffffff;
+}
+
+section {
+position: relative;
+opacity: 0;
+transform: translate(0, 40px);
+transition: all 2s;
+}
+
+section.visible {
+opacity: 1;
+transform: translate(0, 0);
+}
+
+
+a { color: #FFFFFF ; }
+img { padding-right:10px;}

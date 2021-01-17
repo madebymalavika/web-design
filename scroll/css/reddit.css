@@ -1,0 +1,122 @@
+
+
+body
+{
+  /* grey background color */
+  background-color: #dbe0e4 ;
+
+}
+
+
+#header
+{
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  top: 0 ;
+  left: 0;
+  height: 49px ;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 2;
+  border-bottom: 1px solid #edeff1;
+}
+
+#searchbar
+{
+    align: center;
+    background-color: #f6f7f8;
+    border: 1px solid #edeff1;
+    width: 500px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 36px;
+    left: 85px;
+    margin-top: 0;
+    margin-left: 340px;
+    padding-left: 5px;
+    padding-right: 48px;
+    position: relative;
+    top: 8px;
+}
+
+#logo
+{
+  position: absolute;
+  float:left;
+  left: 20px;
+  top: 10px;
+  cursor: pointer;
+
+}
+
+#bar
+{
+  width: 100%;
+  background-color: #ffffff;
+  position: relative;
+  top: 36px;
+  height: 40px;
+  left: 0;
+
+}
+
+
+#one
+{
+  margin-top: 100px;
+}
+
+
+.userimage
+{
+  position: relative ;
+  background-color: #ececec ;
+  width: 24px ;
+  height: 24px ;
+  border-radius: 100px ;
+  left: 55px;
+
+}
+
+.post{
+  cursor: pointer;
+  margin-left: 200px ;
+  height: 200px ;
+  width: 650px;
+  margin-top: 10px;
+  background-color: #ffffff;
+  border: 1px solid rgb(204, 204, 204);;
+  border-radius: 4px;
+
+  transition-duration: 0.5s, 0.5s, 0.5s;
+  transition-property: color, fill, box-shadow;
+  transition-timing-function: ease, ease, ease;
+}
+
+.postimage
+{
+  height: 430px;
+}
+
+.postfooter
+{
+  float: left;
+  position: relative;
+  background-color: #f8f9fa;
+  width: 40px;
+  border-left: 4px solid transparent;
+  height: 180px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  left: 0;
+  padding: 8px 4px 8px 0;
+  top: 0;
+  bottom: 0;
+
+}
+
+.post:hover{
+   border-color: rgb(137, 137, 137);;
+
+}

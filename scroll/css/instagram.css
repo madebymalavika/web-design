@@ -1,0 +1,115 @@
+
+
+body
+{
+  /* grey background color */
+  background-color: #fafafa ;
+  height: 100% ;
+
+}
+
+#header
+{
+    height: 77px;
+    background-color: #FFFFFF;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0, 0, 0, 0.098);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    text-align: center ;
+    align-items: center ;
+    align-content: center ;
+    /* -webkit-transition: height .2s ease-in-out;
+    transition: height .2s ease-in-out; */
+}
+
+#logo
+{
+  position: absolute;
+  float:left;
+  left: 200px;
+  top: 27px;
+  cursor: pointer;
+
+}
+
+#searchbar
+{
+    align: center ;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center ;
+    align-self: center ;
+    margin-top: 24.5px ;
+    height: 26px ;
+    width: 215px;
+    background-color: #fafafa ;
+    border-color: #dbdbdb ;
+    border-width: 1px ;
+    border-style: solid;
+    border-radius: 5px ;
+}
+
+#space
+{
+  height: 50px;
+  width: 100%; 
+
+}
+
+  .post {
+    text-align: center ;
+    position: relative;
+    margin-top: 60px ;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.098);
+    width: 602px ;
+    height: 602px ;
+    background-color: #FFFFFF ;
+    margin-left: 225px ;
+    }
+
+  .postheader {
+    margin-left: auto ;
+    width: 568px ;
+    height: 28.5px ;
+    padding: 16px ;
+    /* top: 700 ; */
+    position: absolute ;
+    background-color: #FFFFFF ;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0, 0, 0, 0.098); }
+
+    .postuser {
+      position: relative ;
+      background-color: #ececec ;
+      width: 32px ;
+      height: 32px ;
+      border-radius: 100px ;
+      cursor: pointer;
+    }
+
+  .postimage {
+    position: relative;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 30%;
+    margin-bottom: 40%;
+    height: auto;
+  }
+
+  .postfooter {
+    bottom: 0;
+    width: 568px ;
+    height: 55px ;
+    padding-left: 0px ;
+    padding-right: 0px ;
+    border-top: 1px solid #efefef;
+    margin-top: 4px ;
+  }
