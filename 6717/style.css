@@ -1,0 +1,200 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #FFFFFF;
+  height: 20000px;
+  text-align: center;
+  /* cursor: pointer;  */
+  cursor: url(assets/cursor-small.png), auto;
+}
+
+/* img {
+    max-width: 100%;
+    height: auto;
+} */
+::-webkit-scrollbar {
+  display: none;
+}
+
+#content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* if smaller content box is used and centering is needed:
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    */
+}
+
+#viewport {
+  -webkit-perspective: 300px;
+  -moz-perspective: 300px;
+  -webkit-perspective-origin: 50% 50%;
+  -moz-perspective-origin: 50% 50%;
+  -moz-transform-style: preserve-3d;
+  perspective: 300px;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+}
+
+.frame {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  /* display: none; */
+  opacity: 0;
+}
+
+.frame.box {
+  border-radius: .5em;
+  background-color: white;
+  /* change this background colour once the SVGs are ready */
+  /* width: 100%;
+    height: 100%;  */
+  padding: 2em;
+  text-align: center;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/* .main {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  } */
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.front {
+  transform: translateX(20px) translateZ(80px);
+}
+
+.mid {
+  transform: translateX(10px) translateZ(40px);
+}
+
+.text {
+  transform: translateZ(150px) scale(0.5);
+}
+
+.front path, .mid path, .back path{
+  fill-opacity: 0;
+  stroke: black;
+  stroke-width: 2px;
+  stroke-linecap: round;
+  troke-linejoin: round;
+  /*  stroke-dasharray: 5000px;
+    stroke-dashoffset: 5000px; */
+}
+
+.move {
+  transform: translateX(-10px) translateZ(120px) !important;
+}
+
+#nofill {
+  stroke-width: 0 !important;
+}
+
+#one {
+  transform: translateZ(150px) translateX(-400px) translateY(-400px) scale(0.5);
+}
+
+#two {
+  transform: translateZ(150px) translateX(200px) translateY(-200px) scale(0.5);
+}
+
+#five-a, #eight-a {
+  transform: translateZ(150px) translateY(-150px) translateX(-150px) scale(0.5);
+}
+
+#nine-a {
+  transform: translateZ(150px) translateY(20px) translateX(-140px) scale(0.5);
+}
+
+#five-b {
+  transform: translateZ(150px) translateY(150px) translateX(350px) scale(0.5);
+}
+
+#eight-b {
+  transform: translateZ(150px) translateY(150px) translateX(50px) scale(0.5);
+}
+
+#nine-b {
+  transform: translateZ(150px) translateY(150px) translateX(110px) scale(0.5);
+}
+
+#six {
+  transform: translateZ(150px) translateX(-130px) translateY(-100px) scale(0.5);
+}
+
+#seven {
+  transform: translateZ(150px) translateY(-30px) scale(0.5);
+}
+
+#twelve {
+  transform: translateZ(150px) translateY(-320px) scale(0.5);
+}
+
+#thirteen {
+  transform: translateZ(150px) scale(0.5) translateY(-430px);
+}
+
+#fifteen {
+  transform: translateZ(150px) scale(0.5) translateY(360px) translateX(400px);
+}
+
+#sixteen {
+  transform: translateZ(150px) scale(0.5) translateY(-180px) translateX(250px);
+}
+
+#seventeen {
+  transform: translateZ(150px) scale(0.5) translateY(-740px) translateX(140px);
+}
+
+#eighteen {
+  transform: translateZ(150px) scale(0.5) translateY(280px) translateX(-80px);
+}
+
+#nineteen {
+  transform: translateZ(150px) scale(0.5) translateY(-210px) translateX(0px);
+}
+
+#twenty {
+  transform: translateZ(150px) scale(0.5) translateY(-990px) translateX(-250px);
+}
+
+#twenty1 {
+  transform: translateZ(150px) scale(0.5) translateY(-140px) translateX(0px);
+}
+
+#twenty2 {
+  transform: translateZ(150px) scale(0.5) translateY(-380px) translateX(0px);
+}
+
+.end path {
+  fill-opacity: 1 !important;
+  fill: black !important;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: 0px !important;
+    stroke-dashoffset: none !important;
+}
