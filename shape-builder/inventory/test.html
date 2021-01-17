@@ -1,0 +1,41 @@
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="lib.css" type="text/css"/>
+      <title>
+        Project 3 Test
+      </title>
+  </head>
+
+  <body onload="fade()" onmousemove="m(event)" onclick="hide()">
+
+  <div id="onboarding">click anywhere to create an animated shape</div>
+
+  <script>
+  function m(e){
+    var bx = document.getElementById("onboarding");
+    bx.style.left = e.pageX - 150;
+    bx.style.top = e.pageY + 50;
+  }
+
+  function hide(){
+    var bx = document.getElementById("onboarding");
+    bx.style.transitionDuration = 0.3 + "s";
+    bx.style.opacity = 0;
+  }
+
+  function fade(){
+    var bx = document.getElementById("onboarding");
+    bx.style.opacity = 1;
+  }
+
+</script>
+
+
+  <script src="clicker.js"></script>
+
+
+  </body>
+
+</html>
